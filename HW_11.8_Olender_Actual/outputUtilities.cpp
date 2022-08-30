@@ -16,8 +16,7 @@ void printAccountUpdateMenu(){
     "6 - Date of last Payment\n" <<
     "7 - Search for account by Name\n" <<
     "8 - Create new account\n" <<
-    "\n 0 - EXIT" << std::endl;
-
+    "\n0 - EXIT" << std::endl;
 }
 
 void displayUpdatedAccountHeader(){
