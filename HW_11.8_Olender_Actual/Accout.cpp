@@ -5,17 +5,16 @@
 std::string validateTextInput(std::string input){
 
     while (input.empty()){
-        std::cout << "This field can NOT be empty, Try again";
-        std::cin >> input;
+        getline(std::cin, input);
     }
+
     return input;
 }
 
 std::string updateTextField(std::string field ){
     std::string input;
-    std::cout << "Enter a new value for " << field << std::endl;
-    std::cin >> input;
-
+    std::cout << "Enter a new value for " << field << " (REQUIRED) " << std::endl;
+    getline(std::cin, input);
     input = validateTextInput(input);
 
     return input;
@@ -31,7 +30,7 @@ double validateNonNegativeInput(double value){
 
 double updateDoubleField(std::string field){
     double input;
-    std::cout << "Enter a new value for " << field << std::endl;
+    std::cout << "Enter a new value for " << field << " (REQUIRED) " << std::endl;
     std::cin >> input;
 
     input = validateNonNegativeInput(input);
@@ -50,34 +49,46 @@ void displayAccount(Account *account, int accountNumber){
     "Last Payment Date: " << account->dateOfLastPayment << "\n"<< std::endl;
 }
 
-void processDecision(Account *account, int input){
+void processDecision(Account account[], int input, int SIZE){
     switch(input){
         case(1):
-            account->name = updateTextField("Name");
+            account->name = updateTextField("Name:");
             break;
         case(2):
-            account->address = updateTextField("Address");
+            account->address = updateTextField("Address:");
             break;
         case(3):
-            account->cityStateZip = updateTextField("City, State, Zip Code");
+            account->cityStateZip = updateTextField("City, State, Zip Code:");
             break;
         case(4):
-            account->phoneNumber = updateTextField("Phone Number");
+            account->phoneNumber = updateTextField("Phone Number:");
             break;
         case(5):
-            account->accountBalance = updateDoubleField("Account Balance");
+            account->accountBalance = updateDoubleField("Account Balance:");
             break;
         case(6):
-            account->dateOfLastPayment = updateTextField("Date of Last Payment");
+            account->dateOfLastPayment = updateTextField("Date of Last Payment:");
             break;
         case(7):
-            std::cout << "This will create a new account" <<  std::endl;
+            searchAccountByName(account, SIZE);
             break;
         case(8):
-            std::cout << "This will search an account by name" <<  std::endl;
-            break;
+            std::cout << "You have opted to create a new account" << std::endl;
+            displayEmptyAccounts(account, SIZE);
+            createNewAccount(&account[promptUserChoice("What account would you like to set up? ") - 1]);
+            displayAllAccounts(account, SIZE);
         default:
             break;
+    }
+}
+
+void displayEmptyAccounts(Account accountList[], int SIZE) {
+    for (int i = 0; i < SIZE; i++) {
+        if (accountList[i].name.empty()) {
+            std::cout << "----------------------------------------------\n" <<
+                      "Account " << i + 1 << " is available to open.\n" <<
+                      "----------------------------------------------" << std::endl;
+        }
     }
 }
 
@@ -100,4 +111,25 @@ void createNewAccount(Account *account){
             account->phoneNumber = updateTextField("Phone Number");
             account->accountBalance = updateDoubleField("Account Balance");
             account->dateOfLastPayment = updateTextField("Date of Last Payment");
+}
+
+void searchAccountByName(Account accountList[], int SIZE){
+    std::string searchPattern = updateTextField("Enter an account name to search by:\n");
+
+    std::for_each(searchPattern.begin(), searchPattern.end(), [](char & c){
+        c = std::toupper(c);
+    });
+
+    std::regex regexRule(searchPattern);
+
+
+
+
+    for (int i = 0; i < SIZE; i++){
+        std::string nameString = accountList[i].name;
+
+        if (regex_match(nameString, regexRule)){
+            std::cout << "########### MATCH FOUND ###########" << std::endl;
+        }
+    }
 }

@@ -5,16 +5,17 @@
 #include "outputUtilities.h"
 
 void printAccountUpdateMenu(){
-    std::cout << "Which account feature would you like to update?\n" <<
-    "---------------------------------------------------------------\n" <<
+    std::cout << "---------------------------------------------------------------\n" <<
+                 "                Account Modification Options\n" <<
+                 "---------------------------------------------------------------\n" <<
     "1 - Name\n" <<
     "2 - Address\n" <<
     "3 - City / State / Zip Code\n" <<
     "4 - Phone Number\n" <<
     "5 - Account Balance\n" <<
     "6 - Date of last Payment\n" <<
-    "7 - Create NEW account\n"
-    "8 - Search for account by Name\n" <<
+    "7 - Search for account by Name\n" <<
+    "8 - Create new account\n" <<
     "\n 0 - EXIT" << std::endl;
 
 }

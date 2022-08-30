@@ -11,9 +11,12 @@ int main() {
     Account accountList[SIZE] = {a1, a2};
 
     // program loop
+    std::cout << "###################################################\n" <<
+                 "               Welcome to the Bank!\n"
+                 "###################################################" << std::endl;
     while (true){
         displayAllAccounts(accountList, SIZE);
-        int accountSelection = promptUserChoice("What Account would you like to modify? (Press 0 to EXIT)\n");
+        int accountSelection = promptUserChoice("What Account would you like to work with? (Press 0 to EXIT)\n");
 
         // The user does NOT select the exit option
         if (accountSelection != 0){
@@ -29,12 +32,8 @@ int main() {
             } else {
                 printAccountUpdateMenu();
                 int secondaryDecision = promptUserChoice("");
-                processDecision(accountList, secondaryDecision);
+                processDecision(accountList, secondaryDecision, SIZE);
             }
-
-
-
-
 
         } else {
             displayGoodByeMessage();
@@ -42,5 +41,13 @@ int main() {
         }
 
     }
+
+    /*while (true){
+        printAccountUpdateMenu();
+        int optionChoice = promptUserChoice("Make a selection from the Menu above: ");
+
+        processDecision(accountList, optionChoice, SIZE);
+        //break;
+    }*/
     return 0;
 }
