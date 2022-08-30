@@ -1,0 +1,8 @@
+//
+// Created by PJ Olender on 8/28/22.
+//
+
+#ifndef HW_14_3_OLENDER_ROOMDIMENSION_H
+#define HW_14_3_OLENDER_ROOMDIMENSION_H
+
+#endif //HW_14_3_OLENDER_ROOMDIMENSION_H

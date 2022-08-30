@@ -1,0 +1,11 @@
+# ninja log v5
+355	389	1661713369540628722	HW_11_8_Olender	e6e3b64d5709afd6
+1	335	1661713369483874280	CMakeFiles/HW_11_8_Olender.dir/main.cpp.o	c07f7c4445c24da3
+2	354	1661713369504718584	CMakeFiles/HW_11_8_Olender.dir/inputUtilities.cpp.o	1cf9cc5f88c82ee2
+3	347	1661712751540690944	CMakeFiles/HW_11_8_Olender.dir/partsUtilities.cpp.o	5b04014f88108c5b
+2	335	1661713369485419925	CMakeFiles/HW_11_8_Olender.dir/outputUtilities.cpp.o	9a111883f6d6a0bc
+2	279	1661719936800716418	CMakeFiles/HW_11_8_Olender.dir/main.cpp.o	3135e059cf795a1a
+2	360	1661719936881045702	CMakeFiles/HW_11_8_Olender.dir/inputUtilities.cpp.o	b75a78d7c3157587
+2	375	1661719936896965183	CMakeFiles/HW_11_8_Olender.dir/outputUtilities.cpp.o	eee57c2018ebbf
+2	379	1661719936901245045	CMakeFiles/HW_11_8_Olender.dir/partsUtilities.cpp.o	8b092537fe668a49
+379	409	1661719936932533294	HW_11_8_Olender	e6e3b64d5709afd6
