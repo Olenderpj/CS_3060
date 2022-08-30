@@ -7,6 +7,8 @@
 
 #include <iostream>
 
+
+// Declare a blank account structure
 struct Account{
     std::string name;
     std::string address;

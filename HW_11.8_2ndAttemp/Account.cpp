@@ -5,7 +5,7 @@
 #include "Account.h"
 #include "inputUtilities.h"
 
-
+// Process all the decisions that the user makes from the menu prompt
 void processDecision(int input, Account accountList[], int SIZE){
     switch(input){
         case(0): // Exit the menu
@@ -65,6 +65,7 @@ void processDecision(int input, Account accountList[], int SIZE){
     }
 }
 
+// Create and store the information in an account then display to the user
 void createAccount(Account *account){
     account->name = updateTextField("Enter the New account Name");
     account->address = updateTextField("Enter the New account Address");
@@ -78,7 +79,7 @@ void createAccount(Account *account){
     displayAccount(*account, -1);
 }
 
-// Display All Accounts
+// Display Account information for all accounts
 void displayAllAccounts(Account accountList[], int SIZE){
     for (int i = 0; i < SIZE; i++){
         displayAccount(accountList[i], i);
@@ -86,6 +87,7 @@ void displayAllAccounts(Account accountList[], int SIZE){
 
 }
 
+// Display all accounts that have no name (no name is classified as empty)
 void displayEmptyAccounts(Account accountList[], int SIZE) {
     std::cout << "---------------------------------------------------------------\n" <<
                  "                      Empty Account Slots\n" <<
@@ -98,18 +100,23 @@ void displayEmptyAccounts(Account accountList[], int SIZE) {
     std::cout << "---------------------------------------------------------------\n" << std::endl;
 }
 
+// Display a singular account
+    // Message for an empty account
+    // Message for displaying an account without an account number
+    // Message for displayin an account WITH an account number
 void displayAccount(Account account, int accountNumber){
     if (account.name.empty()){
         std::cout << "Account " << accountNumber + 1 << " is Empty" << std::endl;
 
-    } else if (accountNumber == -1){
+    } else if (accountNumber == -1){ // Display account information with NO account number
                   std::cout << "\nName: " << account.name << "\n" <<
                   "Address: " << account.address << "\n" <<
                   "City / State / Zip: " << account.cityStateZip << "\n" <<
                   "Phone Number:" << account.phoneNumber << "\n" <<
                   "Account Balance: $" << account.balance << "\n" <<
                   "Last Payment Date: " << account.dateLastPaid << "\n" << std::endl;
-    } else {
+
+    } else { // Display account information with account number
         std::cout << "\nAccount Number: " << accountNumber + 1 << "\n" <<
                   "Name: " << account.name << "\n" <<
                   "Address: " << account.address << "\n" <<
@@ -120,11 +127,13 @@ void displayAccount(Account account, int accountNumber){
     }
 }
 
+// Search for all accounts that match an input string/ name
 void searchAccountByName(Account accountList[], int SIZE){
     int count = 0;
     std::string searchString;
-    std::cout << "Enter a name to search by: " << std::endl;
+    std::cout << "Enter a FULL or PARTIAL name to search by: " << std::endl;
 
+    // Get input from the user
     getline(std::cin, searchString);
     searchString = validateTextInput(searchString);
 
@@ -132,6 +141,8 @@ void searchAccountByName(Account accountList[], int SIZE){
                  "Searching Accounts for names Matching \' " << searchString << " \'\n" <<
                  "---------------------------------------------------------------\n" << std::endl;
 
+
+    // Iterate over all the accounts and search for the name
     for (int i = 0; i < SIZE; i++){
         if (accountList[i].name.find(searchString) != std::string::npos || !accountList[i].name.empty()) {
             count += 1;
@@ -146,8 +157,7 @@ void searchAccountByName(Account accountList[], int SIZE){
     std::cout << "---------------------------------------------------------------\n" << std::endl;
 }
 
-
-
+// Print the menu of account options for the user
 void printAccountUpdateMenu(){
     std::cout << "---------------------------------------------------------------\n" <<
                  "                Account Modification Options\n" <<
@@ -165,12 +175,19 @@ void printAccountUpdateMenu(){
                  "---------------------------------------------------------------" << std::endl;
 }
 
+// Display a welcome message to std output
 void displayWelcomeMessage() {
     std::cout << "###############################################################\n" <<
-              "                       Welcome to the Bank!\n" <<
-              "###############################################################\n" << std::endl;
+                 "                    Welcome to the Bank!\n" <<
+                 "###############################################################\n" <<
+                 "                  !!!!!! IMPORTANT !!!!!!!\n" <<
+                 "Please note that accounts are NOT auto filled, TO create an \n" <<
+                 "account and get started, select the 3rd option below. You will  \n" <<
+                 "then be able to modify and search for accounts at will.\n" <<
+                 "###############################################################\n" << std::endl;
 }
 
+// display a goodbye message to std output
 void displayGoodByeMessage() {
     std::cout << "###############################################################\n" <<
                  "            Thank you for visiting the bank today\n" <<
