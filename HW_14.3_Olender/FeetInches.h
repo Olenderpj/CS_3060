@@ -1,32 +1,24 @@
 //
-// Created by PJ Olender on 8/28/22.
+// Created by PJ Olender on 9/3/22.
 //
 
 #ifndef HW_14_3_OLENDER_FEETINCHES_H
 #define HW_14_3_OLENDER_FEETINCHES_H
 
-
 class FeetInches{
 private:
-    int feet;
-    int inches;
+    double inches;
 
 public:
-    FeetInches(int f = 0, int i = 0);
+    // Constructor
+    FeetInches (double inch){
+        inches = inch;
 
-    FeetInches (const FeetInches &oldFIObject);
+    }
 
-    FeetInches multiply(const FeetInches &);
-
-    void simplify(const FeetInches &right);
-
-    int getFeet() const;
-
-    void setFeet(int feet);
-
-    int getInches() const;
-
-    void setInches(int inches);
+    double getInches() const {
+        return inches;
+    }
 };
 
 #endif //HW_14_3_OLENDER_FEETINCHES_H

@@ -3,4 +3,4 @@ project(HW_14_3_Olender)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(HW_14_3_Olender main.cpp RoomDimension.cpp RoomDimension.h FeetInches.cpp FeetInches.h)
+add_executable(HW_14_3_Olender main.cpp RoomDimension.h FeetInches.h RoomCarpet.h)

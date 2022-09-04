@@ -52,18 +52,6 @@ build CMakeFiles/HW_14_3_Olender.dir/main.cpp.o: CXX_COMPILER__HW_14_3_Olender_D
   OBJECT_DIR = CMakeFiles/HW_14_3_Olender.dir
   OBJECT_FILE_DIR = CMakeFiles/HW_14_3_Olender.dir
 
-build CMakeFiles/HW_14_3_Olender.dir/RoomDimension.cpp.o: CXX_COMPILER__HW_14_3_Olender_Debug /Users/pjolender/CLionProjects/CS3060/HW_14.3_Olender/RoomDimension.cpp || cmake_object_order_depends_target_HW_14_3_Olender
-  DEP_FILE = CMakeFiles/HW_14_3_Olender.dir/RoomDimension.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/HW_14_3_Olender.dir
-  OBJECT_FILE_DIR = CMakeFiles/HW_14_3_Olender.dir
-
-build CMakeFiles/HW_14_3_Olender.dir/FeetInches.cpp.o: CXX_COMPILER__HW_14_3_Olender_Debug /Users/pjolender/CLionProjects/CS3060/HW_14.3_Olender/FeetInches.cpp || cmake_object_order_depends_target_HW_14_3_Olender
-  DEP_FILE = CMakeFiles/HW_14_3_Olender.dir/FeetInches.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/HW_14_3_Olender.dir
-  OBJECT_FILE_DIR = CMakeFiles/HW_14_3_Olender.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target HW_14_3_Olender
@@ -72,7 +60,7 @@ build CMakeFiles/HW_14_3_Olender.dir/FeetInches.cpp.o: CXX_COMPILER__HW_14_3_Ole
 #############################################
 # Link the executable HW_14_3_Olender
 
-build HW_14_3_Olender: CXX_EXECUTABLE_LINKER__HW_14_3_Olender_Debug CMakeFiles/HW_14_3_Olender.dir/main.cpp.o CMakeFiles/HW_14_3_Olender.dir/RoomDimension.cpp.o CMakeFiles/HW_14_3_Olender.dir/FeetInches.cpp.o
+build HW_14_3_Olender: CXX_EXECUTABLE_LINKER__HW_14_3_Olender_Debug CMakeFiles/HW_14_3_Olender.dir/main.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/HW_14_3_Olender.dir
   POST_BUILD = :
